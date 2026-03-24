@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather Predictor — Neon Edition</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="dark">
+    <div class="hero__bg" aria-hidden="true">
+    </div>
+    <div class="hero__noise" aria-hidden="true">
+    </div>
+    <div class="cursor" aria-hidden="true">
+      <div class="cursor__dot" id="cursorDot">
+      </div>
+    </div>
+    <div class="confetti" id="confetti">
+    </div>
+    <div class="app" role="application">
+      <header class="header" role="banner">
+        <nav class="nav" aria-label="Primary">
+          <h1 class="brand__title">Weather <span>Predictor</span>
+          </h1>
+          <button id="themeToggle" class="btn btn--primary">Toggle Theme</button>
+        </nav>
+      </header>
+      <main class="main" role="main">
+        <section class="hero" aria-labelledby="hero-title">
+          <h2 id="hero-title" class="hero__title hero__title--glitch" data-text="Neon Weather">Neon Weather</h2>
+          <p class="hero__subtitle">Live demo preview: A glassy, neon dashboard with floating blobs, glitch titles, and real-time weather cards. <span class="rainbow typing">Type a city to begin.</span>
+          </p>
+        </section>
+        <section class="layout" aria-label="Weather Workspace">
+          <article class="card" aria-labelledby="search-title">
+            <div class="card__shine">
+            </div>
+            <div class="blob" aria-hidden="true">
+            </div>
+            <h3 id="search-title">Search City</h3>
+            <div class="form__row" role="search">
+              <input id="cityInput" class="input" type="text" placeholder="Enter city name" aria-label="City name" />
+              <button id="searchBtn" class="btn btn--primary pulse">Search</button>
+            </div>
+            <p id="message" class="city__meta" aria-live="polite">
+            </p>
+            <div id="loading" class="city__meta" hidden>Loading weather...</div>
+          </article>
+          <aside class="card" aria-labelledby="current-title">
+            <div class="card__shine">
+            </div>
+            <h3 id="current-title">Current Weather</h3>
+            <article id="currentWeather" class="list" aria-live="polite">
+            </article>
+          </aside>
+        </section>
+        <section class="card" aria-labelledby="controls-title">
+          <h3 id="controls-title">Filters & Sorting</h3>
+          <div class="controls">
+            <label>Condition
+              <select id="filterSelect" class="input" aria-label="Filter by condition">
+                <option value="all">All</option>
+              </select>
+            </label>
+            <label>Temperature
+              <select id="sortSelect" class="input" aria-label="Sort by temperature">
+                <option value="none">None</option>
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+              </select>
+            </label>
+          </div>
+        </section>
+        <section class="card" aria-labelledby="saved-title">
+          <h3 id="saved-title">Saved Cities</h3>
+          <div id="cityList" class="list" aria-live="polite">
+          </div>
+        </section>
+      </main>
+      <footer class="footer" role="contentinfo">Built with plain HTML, CSS, and JavaScript.</footer>
+    </div>
+    <script src="app.js">
+    </script>
+  </body>
+</html>
